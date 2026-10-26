@@ -1,0 +1,26 @@
+# Projenin Adı: Kod-Asistan 
+
+## Projenin Amacı
+Kullanıcılara günlük işlerinde (hesaplama, selamlama vb.) yardımcı olacak bir dijital asistan tasarlamak.
+
+## Projenin Hedefleri
+Bu asistanın ilerleyen zamanlarda kazanacağı özellikler:
+* v1.0 Akıllı Menü
+* v2.0 Veri Saklama
+* v3.0 Sensör Entegrasyonu ve Otomasyon
+
+## Projenin Kapsamı (KRİTİK EŞİK Sözde Kod Mantığı)
+
+Bu bölümde baraj otomasyonuna ait sensör verileriyle çalışan sınır denetimli döngü mantığı metinsel olarak yer almaktadır:
+
+* **Problem Tanımı:** Akıllı baraj otomasyonunda su seviyesi saatlik sensörlerle izlenmektedir. Su seviyesi 50 metreyi aşmadığı sürece kapaklar kapalı tutularak saat sayacı artırılır. Eşik aşıldığında ise döngü kırılarak tahliye saati ve kritik su seviyesi ekrana yazdırılmalıdır.
+* **Sözde Kod Adımları:**
+  1. Başlangıç: `saat = 1` olarak atanır ve barajın ilk su durumu okunur.
+  2. Döngü Başlangıcı (`DÖNGÜ`): Su seviyesi kontrol edilir.
+  3. Eğer su seviyesi $\le 50$ metre ise:
+     * Kapaklar kapalı tutulur.
+     * `saat` değeri 1 artırılır.
+     * Yeni saatlik sensör verisi okunarak döngüye devam edilir.
+  4. Eğer su seviyesi $> 50$ metre ise:
+     * Döngü kırılır (`BİTİR`).
+     * Tahliye saati ve kritik su seviyesi ekrana yazdırılır.
